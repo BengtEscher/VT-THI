@@ -389,45 +389,6 @@ body.test-mode:has(.camera) .inner{padding-bottom:70px!important}
   body:has(.camera) .confirm .icon{font-size:40px!important}
   body:has(.camera) .stop .icon{font-size:24px!important}
 }
-
-/* iPad layout revision v3 — effective overrides (landscape). */
-@media (min-width:700px) and (max-width:1400px) and (orientation:landscape){
- body:has(.camera) .inner{
-   box-sizing:border-box!important; padding:6px 6px 66px!important;
-   width:100%!important; align-items:center!important;
- }
- body:has(.camera) .topline{width:100%!important;max-width:none!important;min-height:38px!important;margin-bottom:5px!important}
- body:has(.camera) .camera{
-   box-sizing:border-box!important;
-   width:calc(100vw - 16px)!important;
-   min-width:0!important;max-width:calc(100vw - 16px)!important;
-   height:min(60dvh,calc(100dvh - 174px))!important;
-   min-height:0!important;max-height:none!important;
-   aspect-ratio:auto!important; flex-shrink:0!important;
-   margin:0 auto!important;
- }
- body:has(.camera) .decision-row{
-   box-sizing:border-box!important;
-   display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
-   width:calc(100vw - 16px)!important;max-width:calc(100vw - 16px)!important;
-   gap:8px!important;margin:0 auto!important;padding-top:0!important;
-   margin-top:auto!important;
- }
- body:has(.camera) .decision{
-   box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:none!important;
-   height:78px!important;min-height:78px!important;max-height:78px!important;
-   padding:8px 16px!important;display:flex!important;align-items:center!important;
- }
- body:has(.camera) .decision .icon{
-   display:grid!important;place-items:center!important;flex:0 0 56px!important;
-   width:56px!important;height:56px!important;margin:0 20px 0 0!important;
-   padding:0!important;line-height:1!important;text-align:center!important;
- }
- body:has(.camera) .confirm .icon{font-size:42px!important}
- body:has(.camera) .stop .icon{font-size:25px!important}
- body:has(.camera) .decision-main{font-size:clamp(18px,2.1vw,25px)!important}
- body:has(.camera) .decision-sub{font-size:clamp(11px,1.3vw,15px)!important}
-}
 </style>
 </head>
 <body>
@@ -679,7 +640,7 @@ body.test-mode:has(.camera) .inner{padding-bottom:70px!important}
       document.querySelector('.test-bar')?.remove();
       if(!testMode)return;
       const bar=document.createElement('nav');bar.className='test-bar';bar.setAttribute('aria-label','Test navigation');
-      bar.innerHTML='<span class="test-banner">TEST MODE · LAYOUT V3</span><button class="button secondary" type="button" id="testPrev">← Back</button><button class="button secondary" type="button" id="testNext">Next / Skip questions →</button><button class="button secondary" type="button" id="testEnd">Go to end</button><button class="button secondary" type="button" id="testRestart">Restart</button>';
+      bar.innerHTML='<span class="test-banner">TEST MODE</span><button class="button secondary" type="button" id="testPrev">← Back</button><button class="button secondary" type="button" id="testNext">Next / Skip questions →</button><button class="button secondary" type="button" id="testEnd">Go to end</button><button class="button secondary" type="button" id="testRestart">Restart</button>';
       document.body.appendChild(bar);
       bar.querySelector('#testPrev').onclick=()=>testGo(-1);
       bar.querySelector('#testNext').onclick=()=>testGo(1);
